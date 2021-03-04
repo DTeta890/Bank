@@ -1,0 +1,14 @@
+Kerkesat: 
+Shtimi i llogarive,
+Per secilen te depozitohet dhe terhiqet,
+Te kete nje liste me llogarite,
+Datestamp te veprimeve,
+Te listoj detajet dhe mundesite e nje llogarie balanca, depozite, terheqje dhe historiku i veprimeve te llogarise
+
+Program.cs (List statike Llogari), (Menu), (Submenu)
+
+Account.cs:( Id,Owner, IBAN, Balance, Liste<Transaksione>)
+Metodat(Constructor(Per krijimin e llogarise se re), Terhiq, Depozito, History)
+
+Transaction.cs:
+( Id, Data, Amount)
