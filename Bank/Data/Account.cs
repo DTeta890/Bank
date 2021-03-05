@@ -35,17 +35,17 @@ namespace Bank.Data
         {
             var transaction = new Transaction(amaunt, DateTime.Now);
             Transactions.Add(transaction);
-            Console.WriteLine($"Deposit was succesful, New Balance: ${Balance} !");
+            Console.WriteLine($"\nDeposit was succesful, New Balance: ${Balance} !");
         }
         public void MakeWithdraw(int amaunt)
         {
             if (amaunt > Balance)
-                Console.WriteLine($"Amaount must not exceed {Balance}!");
+                Console.WriteLine($"\nAmaount must not exceed ${Balance}!");
             else
             {
                 var transaction = new Transaction(-amaunt, DateTime.Now);
                 Transactions.Add(transaction);
-                Console.WriteLine($"Withdrawal was succesful, New Balance: ${Balance} !");
+                Console.WriteLine($"\nWithdrawal was succesful, New Balance: ${Balance} !");
             }
         }
         public void ShowHistory()
