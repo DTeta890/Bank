@@ -31,19 +31,24 @@ namespace Bank.Data
             var firstTransaction = new Transaction(0, DateTime.Now);
             this.Transactions.Add(firstTransaction);
         }
-        public void MakeDeposit(int amaunt)
+        public void MakeDeposit(int amount)
         {
-            var transaction = new Transaction(amaunt, DateTime.Now);
-            Transactions.Add(transaction);
-            Console.WriteLine($"\nDeposit was succesful, New Balance: ${Balance} !");
+            if (amount > 0)
+            {
+                var transaction = new Transaction(amount, DateTime.Now);
+                Transactions.Add(transaction);
+                Console.WriteLine($"\nDeposit was succesful, New Balance: ${Balance} !");
+            }
+            else
+                Console.WriteLine("\nInvalid amount! Try again.");
         }
-        public void MakeWithdraw(int amaunt)
+        public void MakeWithdraw(int amount)
         {
-            if (amaunt > Balance)
-                Console.WriteLine($"\nAmaount must not exceed ${Balance}!");
+            if (amount > Balance || amount < 0 )
+                Console.WriteLine("\nInvalid amount! Try again.");
             else
             {
-                var transaction = new Transaction(-amaunt, DateTime.Now);
+                var transaction = new Transaction(-amount, DateTime.Now);
                 Transactions.Add(transaction);
                 Console.WriteLine($"\nWithdrawal was succesful, New Balance: ${Balance} !");
             }
