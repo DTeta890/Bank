@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Bank.Data
@@ -7,7 +8,8 @@ namespace Bank.Data
     public class Account
     {
         private static int Seed = 100;
-        //public int Id { get; set; }
+        [Key]
+        public int Id { get; set; }
         public string Owner { get; set; }
         public string Iban { get; set; }
         public int Balance
@@ -22,7 +24,7 @@ namespace Bank.Data
                 return balance;
             }
         }
-        public List<Transaction> Transactions { get; set; }
+        public virtual List<Transaction> Transactions { get; set; }
         public Account(string owner)
         {
             this.Owner = owner;
